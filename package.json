@@ -12,8 +12,8 @@
     "url": "git@github.com:ekryski/heroku-scheduler.git"
   },
   "engines": {
-    "node": "=0.10.x",
-    "npm": "=1.2.x"
+    "node": "0.10.x",
+    "npm": "1.2.x"
   },
   "main": "server.js",
   "devDependencies": {
