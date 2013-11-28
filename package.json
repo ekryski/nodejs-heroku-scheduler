@@ -1,0 +1,27 @@
+{
+  "name": "heroku-scheduler",
+  "description": "Heroku scheduler test",
+  "version": "0.1.0",
+  "author": {
+    "name": "Eric Kryski",
+    "email": "e.kryski@gmail.com"
+  },
+  "homepage": "http://erickryski.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ekryski/heroku-scheduler.git"
+  },
+  "engines": {
+    "node": "=0.10.x",
+    "npm": "=1.2.x"
+  },
+  "main": "server.js",
+  "devDependencies": {
+  },
+  "scripts": {
+  },
+  "dependencies": {
+    "lodash": "~2.3.0",
+    "kue": "~0.6.2"
+  }
+}
