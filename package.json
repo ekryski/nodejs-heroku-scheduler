@@ -16,12 +16,11 @@
     "npm": "1.2.x"
   },
   "main": "server.js",
-  "devDependencies": {
-  },
-  "scripts": {
-  },
+  "devDependencies": {},
+  "scripts": {},
   "dependencies": {
     "lodash": "~2.3.0",
-    "kue": "~0.6.2"
+    "kue": "~0.6.2",
+    "redis": "~0.9.1"
   }
 }
