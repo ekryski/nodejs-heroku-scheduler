@@ -2,7 +2,7 @@ var url = require('url');
 var kue = require('kue');
 var redis = require('redis');
 
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 
 if (process.env.REDISTOGO_URL) {
   var rtg = require("url").parse(process.env.REDISTOGO_URL);
