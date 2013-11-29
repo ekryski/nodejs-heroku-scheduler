@@ -1,11 +1,26 @@
-var scheduler = require('./scheduler');
+// var scheduler = require('./scheduler');
+var url = require('url');
+var kue = require('kue');
+var redis = require('redis');
+
+if (process.env.REDISTOGO_URL) {
+  var rtg = require("url").parse(process.env.REDISTOGO_URL);
+    
+  kue.redis.createClient = function() {
+    var client = redis.createClient(rtg.port, rtg.hostname);
+    client.auth(rtg.auth.split(":")[1]);
+    return client;
+  };
+}
+
+var jobs = kue.createQueue();
 
 function convertFrame(i, fn) {
   setTimeout(fn, Math.random() * 1000);
 }
 
 // process video conversion jobs, 1 at a time.
-scheduler.on('process:video', function(job, done){
+jobs.process('video', 1, function(job, done){
   console.log('Processing Video');
   var frames = job.data.frames;
 
@@ -27,5 +42,3 @@ scheduler.on('process:video', function(job, done){
 });
 
 console.log('Video Worker Running');
-  
-scheduler.run();
